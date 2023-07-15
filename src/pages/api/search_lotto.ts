@@ -1,27 +1,29 @@
+import prisma from '@/lib/prisma';
 import { PrismaClient } from '@prisma/client';
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  code: string
-  endAt: Date
-}
+  code: string;
+  endAt: Date;
+};
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const prisma = new PrismaClient();
   try {
-    console.log(req.body['code'])
-    const newLotto = await prisma.lotto.findMany({
+    const lotto = await prisma.lotto.findFirst({
       where: {
-        code: req.body.code,
-      }
-    })
-    console.log(newLotto)
-    res.json(newLotto);
+        endAt: {
+          gt: new Date(),
+        },
+      },
+      orderBy: {
+        endAt: 'asc',
+      },
+    });
+    res.status(200).json(lotto);
   } catch (error) {
     res.status(500);
   }
 }
-

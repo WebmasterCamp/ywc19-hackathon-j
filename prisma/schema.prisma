@@ -11,21 +11,30 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
-  email     String    @unique
-  name      String?
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
   password  String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-  lottos    Lotto[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Lotto     Lotto[]
 }
 
 model Lotto {
-  id        Int       @id @default(autoincrement())
-  code      String    
-  createdAt DateTime  @default(now())
-  endAt     DateTime  
-  user      User?     @relation(fields: [userId], references: [id])
-  userId    Int?
+  id           Int         @id @default(autoincrement())
+  number       String
+  user         User?       @relation(fields: [userId], references: [id])
+  userId       Int?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  LottoRound   LottoRound? @relation(fields: [lottoRoundId], references: [id])
+  lottoRoundId Int?
+}
+
+model LottoRound {
+  id        Int      @id @default(autoincrement())
+  round     DateTime @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Lotto     Lotto[]
 }
