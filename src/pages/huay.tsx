@@ -23,7 +23,7 @@ const HomePage: NextPage = () => {
   const numberArray = huays;
 
   const handleSearch = (array: string[]): null | void => {
-    var checkArray: string[] = []
+    var checkArray: string[] = [];
     if (array.every((digit) => digit === '')) {
       return setSearchResults(huays);
     }
@@ -39,7 +39,7 @@ const HomePage: NextPage = () => {
       }
 
       if (match) {
-        checkArray = [...checkArray,number]
+        checkArray = [...checkArray, number];
       }
     });
 
@@ -51,9 +51,9 @@ const HomePage: NextPage = () => {
 
   return (
     <div
-      className={`container mx-auto px-0 flex flex-col h-screen items-center justify-start max-w-lg bg-gray-50/10 ${baiJamjuree.className}`}
+      className={`container mx-auto px-0 flex flex-col min-h-screen items-center justify-start max-w-lg bg-gray-50/10 ${baiJamjuree.className}`}
     >
-      <div className="flex items-center justify-between h-[20rem] w-full bg-primary-1 text-white p-6 mb-4">
+      <div className="flex items-center justify-between h-18 w-full bg-primary-1 text-white p-6 mb-4">
         <div>
           <svg
             width="11"
@@ -71,7 +71,7 @@ const HomePage: NextPage = () => {
             />
           </svg>
         </div>
-        <div>สลากกินแบ่ง</div>
+        <p className="text-lg">สลากกินแบ่ง</p>
         <div />
       </div>
       <div className="flex flex-col gap-2 w-full h-full px-6">

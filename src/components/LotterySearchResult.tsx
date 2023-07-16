@@ -6,16 +6,16 @@ interface LotterySearchResultsProps {
   numbers: string[];
 }
 
-const renderLotto = (lottos: any[]) => {
-  return <></>;
-};
-
 const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
   const [lottoCart, setLottoCart] = useState<any[]>([]);
 
-  // TODO: add lotto to cart
+  // TODO: add lotto to cart if not in cart, remove if in cart
   const addLottoToCart = (lotto: any) => {
-    setLottoCart([...lottoCart, lotto]);
+    if (lottoCart.includes(lotto)) {
+      setLottoCart(lottoCart.filter((lottoItem) => lottoItem !== lotto));
+    } else {
+      setLottoCart([...lottoCart, lotto]);
+    }
   };
 
   return (
@@ -43,11 +43,14 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
             ))}
           </ul>
         ) : (
-          <ul className="w-full">
+          <ul className="w-full space-y-2">
             {numbers.map((number, index) => (
               <li
                 key={index}
-                className="transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0"
+                onClick={() => addLottoToCart(number)}
+                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
+                  lottoCart.includes(number) ? 'bg-green-100' : ''
+                }`}
               >
                 <div className="w-1/2">
                   <p>สลากกินแบ่งรัฐบาล</p>
