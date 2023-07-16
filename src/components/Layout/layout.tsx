@@ -22,7 +22,7 @@ export default function Layout({
   return (
     <div className={`${nonoSansThaiLooped.className} `}>
       {children}
-      <div className="w-screen fixed bottom-0 h-20 border rounded-t-3xl shadow-xl bg-white">
+      <div className="w-screen fixed bottom-0 h-20 border rounded-t-3xl shadow-xl bg-white overflow-hidden">
         <div className="mx-auto h-full max-w-lg  rounded-t-3xl flex">
           <button
             className={`w-1/4 h-full rounded-tl-3xl flex flex-col justify-center items-center ${
