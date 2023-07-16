@@ -11,7 +11,12 @@ const renderLotto = (lottos: any[]) => {
 };
 
 const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
-  const [lotto, setLotto] = useState<any[]>([]);
+  const [lottoCart, setLottoCart] = useState<any[]>([]);
+
+  // TODO: add lotto to cart
+  const addLottoToCart = (lotto: any) => {
+    setLottoCart([...lottoCart, lotto]);
+  };
 
   return (
     <>
@@ -21,7 +26,11 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
             {huays.map((huay, index) => (
               <li
                 key={index}
-                className="transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0"
+                onClick={() => addLottoToCart(huay)}
+                // className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0`}
+                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
+                  lottoCart.includes(huay) ? 'bg-green-100' : ''
+                }`}
               >
                 <div className="w-1/2">
                   <p>สลากกินแบ่งรัฐบาล</p>
