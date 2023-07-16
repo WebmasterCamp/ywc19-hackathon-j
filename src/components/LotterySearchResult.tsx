@@ -8,11 +8,14 @@ interface LotterySearchResultsProps {
   setLottoCart: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
-const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCart, setLottoCart }) => {
-
+const LotterySearchResults: FC<LotterySearchResultsProps> = ({
+  numbers,
+  lottoCart,
+  setLottoCart,
+}) => {
   // TODO: add lotto to cart if not in cart, remove if in cart
   const addLottoToCart = (lotto: any) => {
-    console.log('addLottoToCart')
+    console.log('addLottoToCart');
     if (lottoCart.includes(lotto)) {
       setLottoCart(lottoCart.filter((lottoItem) => lottoItem !== lotto));
     } else {
@@ -35,7 +38,7 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                 key={index}
                 onClick={() => addLottoToCart(number)}
                 className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
-                  lottoCart.includes(number) ? 'bg-[#EDFFEA]' : ''
+                  lottoCart.includes(number) ? 'bg-[#481237]' : ''
                 }`}
               >
                 <div className="w-2/3 space-y-2">
@@ -46,7 +49,7 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                   <p
                     className={`px-4 mb-1 bg-[#F5E4EF] rounded-lg underline underline-offset-2 ${
                       lottoCart.includes(number)
-                      ? 'bg-[#481237] text-white'
+                        ? 'bg-[#481237] text-white'
                         : ''
                     }`}
                   >
