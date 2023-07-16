@@ -76,3 +76,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.base-animation {
+  @apply transition-all duration-200 ease-in-out;
+}
