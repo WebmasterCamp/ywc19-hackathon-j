@@ -168,11 +168,11 @@ export default function HomePage() {
               </svg>
             </p>
           </div>
-          <div className="w-full flex items-center justify-center">
+          {/* <div className="w-full flex items-center justify-center">
             <p className="text-center flex items-center gap-2 bg-[#F8C308] px-4 py-1 rounded-full">
               <span className="mb-1">ตรวจสอบผลรางวัล </span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>

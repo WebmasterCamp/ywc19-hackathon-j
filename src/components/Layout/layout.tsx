@@ -80,7 +80,7 @@ export default function Layout({
               height={24}
               priority
             />
-            <p>ประกัน</p>
+            <p>กรมธรรม์</p>
           </button>
           <button
             className={`w-1/4 h-full rounded-tr-3xl flex flex-col justify-center items-center ${
