@@ -52,7 +52,7 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                   >
                     เลือกเลย
                   </p>
-                  <p className="text-green-600 font-bold text-4xl">80฿</p>
+                  <p className="text-green-600 font-bold text-4xl">95฿</p>
                 </div>
               </li>
             ))}
