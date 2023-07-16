@@ -67,6 +67,11 @@ const LotteryPaid: FC<LotterPaidProps> = ({
           <div className="flex justify-center items-center">
             <div className=" text-2xl font-bold">ชำระเงินเสร็จสิ้น</div>
           </div>
+          <div className="flex justify-center items-center py-4">
+            <div className='p-4 font-bold text-white bg-green-500 rounded-full text-9xl w-48 h-48 flex flex-col justify-center items-center'>
+              ✓
+            </div>
+          </div>
           <div className="flex justify-between items-center my-4">
             <div className=" text-xl ">จำนวนฉลาก</div>
             <div className=" text-xl flex flex-row gap-2">
@@ -78,9 +83,14 @@ const LotteryPaid: FC<LotterPaidProps> = ({
             <div className=" text-xl flex flex-row gap-2">
               <div className=" font-bold">{95 * lottoCart.length}</div> บาท
             </div>
-            <Link href="/">ออก</Link>
           </div>
+          
         </div>
+        <Link
+          className="py-2 font-bold bg-slate-200 rounded 
+          hover:bg-slate-300 focus:outline-none focus:bg-slate-400  w-full base-animation 
+          flex flex-col justify-center items-center" 
+          href="/">กลับไปหน้าหลัก</Link>
       </>
     );
   }
