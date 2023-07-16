@@ -1,4 +1,3 @@
-import prisma from '@/lib/prisma';
 import React, { useEffect, useState } from 'react';
 
 interface LotteryInputProps {
