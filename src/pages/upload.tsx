@@ -6,14 +6,12 @@ import { Noto_Sans_Thai_Looped, Bai_Jamjuree } from 'next/font/google';
 import huays from '@/data/huays';
 import Link from 'next/link';
 
-const Profile: NextPage = () => {
+const Upload: NextPage = () => {
   return (
     <div className={`h-screen w-screen overflow-hidden`}>
-      <Link href={'https://forms.gle/RfNDNN6stKVShMkLA'} target="_blank">
-        <img src="/img/profile.png" className="w-full h-full" alt="" />
-      </Link>
+      <img src="/img/Upload.png" className="w-full h-full" alt="" />
     </div>
   );
 };
 
-export default Profile;
+export default Upload;

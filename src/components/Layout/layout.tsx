@@ -49,7 +49,7 @@ export default function Layout({
             }`}
             onClick={(e) => {
               setNowTab(1);
-              router.push('/insurance');
+              router.push('/book');
             }}
           >
             <Image
