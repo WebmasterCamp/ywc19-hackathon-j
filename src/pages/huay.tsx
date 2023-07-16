@@ -3,6 +3,7 @@ import LotterySearchResults from '@/components/LotterySearchResult';
 import { NextPage } from 'next';
 import React, { useEffect, useState } from 'react';
 import { Noto_Sans_Thai_Looped } from 'next/font/google';
+import Layout from '@/components/Layout/layout';
 
 const nonoSansThaiLooped = Noto_Sans_Thai_Looped({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
