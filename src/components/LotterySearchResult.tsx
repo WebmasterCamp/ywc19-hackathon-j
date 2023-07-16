@@ -27,12 +27,11 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
               <li
                 key={index}
                 onClick={() => addLottoToCart(huay)}
-                // className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0`}
                 className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
                   lottoCart.includes(huay) ? 'bg-green-100' : ''
                 }`}
               >
-                <div className="w-2/3">
+                <div className="w-2/3 space-y-2">
                   <p>สลากกินแบ่งรัฐบาล</p>
                   <p className="font-bold text-3xl tracking-[.6em]">{huay}</p>
                 </div>
@@ -52,19 +51,14 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
                   lottoCart.includes(number) ? 'bg-green-100' : ''
                 }`}
               >
-                <div className="w-1/2">
+                <div className="w-2/3 space-y-2">
                   <p>สลากกินแบ่งรัฐบาล</p>
                   <p className="font-bold text-3xl tracking-[.6em]">{number}</p>
                 </div>
-                <div className="w-1/6 flex flex-col items-center justify-end text-sm">
-                  <p>งวดวันที่</p>
-                  <p className="">16</p>
-                </div>
-                <div className="w-1/6 flex flex-col items-center justify-end text-sm">
-                  <p>ชุดที่</p>
-                  <p className="">4</p>
-                </div>
-                <div className="w-1/6 flex justify-end items-end">
+                <div className="w-1/3 flex justify-end items-end flex-col">
+                  <p className="px-4 mb-1 bg-primary-2/20 rounded-lg underline underline-offset-2">
+                    เลือกเลย
+                  </p>
                   <p className="text-green-600 font-bold text-4xl">80฿</p>
                 </div>
               </li>

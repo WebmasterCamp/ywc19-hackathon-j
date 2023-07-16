@@ -10,13 +10,13 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
 
   function checkNoSelectedDigit() {
     var check = true;
-    console.log(digits)
+    console.log(digits);
     digits.forEach((digit) => {
       if (digit != '') {
-        check = false
+        check = false;
       }
-    })
-    return check
+    });
+    return check;
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +39,10 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit(digits);
+  };
+
+  const clearNumber = () => {
+    setDigits(Array(6).fill(''));
   };
 
   useEffect(() => {
@@ -66,11 +70,14 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
             value={digit}
             onChange={handleChange}
             maxLength={1}
-            className="w-16 h-16 text-2xl border text-center pb-1 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-16 h-16 text-2xl border text-center border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary-1 transition-all ease-in-out duration-200"
           />
         ))}
       </div>
-      <p className="underline underline-offset-4 w-full text-right text-sm">
+      <p
+        onClick={clearNumber}
+        className="underline underline-offset-4 w-full text-right text-sm cursor-pointer"
+      >
         ล้างทั้งหมด
       </p>
       <button
