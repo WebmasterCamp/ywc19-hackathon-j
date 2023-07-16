@@ -14,7 +14,9 @@ export default function Home() {
     <Layout tab={0}>
       <div className="flex flex-col pb-28">
         <div className="flex w-full items-center justify-between bg-primary-1 px-8 py-5">
-          <img src="/img/logo.png" className="w-1/4 h-full" alt="" />
+          <Link className="h-full w-1/4 " href={'/'}>
+            <img src="/img/logo.png" className="h-full" alt="" />
+          </Link>
           <div className="flex items-center justify-center gap-2">
             <Link
               href={'/home'}
@@ -33,9 +35,12 @@ export default function Home() {
         <div className="px-8 py-4 gap-6 flex flex-col">
           <div className="mt-4 rounded-lg relative flex flex-col justify-between p-6 h-[10rem] bg-gradient-to-b from-[#rounded-full1 bg-[#F8C308] from-[#481237] to-[#953D79]">
             <p className="text-white">ซื้อสลากกินแบ่งรัฐบาล</p>
-            <p className="rounded-full px-4 py-1 bg-[#F8C308] text-[#333333] w-[5rem] text-center">
+            <Link
+              href={'/home'}
+              className="rounded-full px-4 py-1 bg-[#F8C308] text-[#333333] w-[5rem] text-center"
+            >
               ซื้อเลย
-            </p>
+            </Link>
             <img
               src="/img/artwork.png"
               className="absolute -right-[4rem]"

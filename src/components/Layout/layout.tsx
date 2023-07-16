@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Noto_Sans_Thai_Looped } from 'next/font/google';
+import { useRouter } from 'next/router';
 
 const nonoSansThaiLooped = Noto_Sans_Thai_Looped({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -16,6 +17,7 @@ export default function Layout({
 }) {
   // TODO: change setNowTab to navigate page
   const [nowTab, setNowTab] = useState(tab);
+  const router = useRouter();
 
   return (
     <div className={`${nonoSansThaiLooped.className} `}>
@@ -28,6 +30,7 @@ export default function Layout({
             }`}
             onClick={(e) => {
               setNowTab(0);
+              router.push('/');
             }}
           >
             <Image
@@ -46,6 +49,7 @@ export default function Layout({
             }`}
             onClick={(e) => {
               setNowTab(1);
+              router.push('/insurance');
             }}
           >
             <Image
@@ -64,6 +68,7 @@ export default function Layout({
             }`}
             onClick={(e) => {
               setNowTab(2);
+              router.push('/huay');
             }}
           >
             <Image
@@ -82,6 +87,7 @@ export default function Layout({
             }`}
             onClick={(e) => {
               setNowTab(3);
+              router.push('/profile');
             }}
           >
             <Image
