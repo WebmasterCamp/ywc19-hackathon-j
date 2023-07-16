@@ -8,6 +8,17 @@ interface LotteryInputProps {
 const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
   const [digits, setDigits] = useState<string[]>(Array(6).fill(''));
 
+  function checkNoSelectedDigit() {
+    var check = true;
+    console.log(digits)
+    digits.forEach((digit) => {
+      if (digit != '') {
+        check = false
+      }
+    })
+    return check
+  }
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const index = Number(name.replace('digit-', '')) - 1;
@@ -32,6 +43,9 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
 
   useEffect(() => {
     console.log('digit', digits);
+    if (checkNoSelectedDigit()) {
+      onSubmit(digits);
+    }
   }, [digits]);
 
   return (
