@@ -1,7 +1,7 @@
 import LotteryInput from '@/components/LotteryInput';
 import LotterySearchResults from '@/components/LotterySearchResult';
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { Noto_Sans_Thai_Looped, Bai_Jamjuree } from 'next/font/google';
 import huays from '@/data/huays';
 import Link from 'next/link';
@@ -20,6 +20,7 @@ const baiJamjuree = Bai_Jamjuree({
 
 const HomePage: NextPage = () => {
   const [searchResults, setSearchResults] = useState<string[]>([...huays]);
+  const [lottoCart, setLottoCart] = useState<any[]>([]);
 
   const numberArray = huays;
 
@@ -30,7 +31,7 @@ const HomePage: NextPage = () => {
     }
     numberArray.forEach((number) => {
       let match = true;
-
+      
       for (let i = 0; i < array.length; i++) {
         const digit = array[i];
         if (array[i] !== '' && number[i] !== digit) {
@@ -38,7 +39,7 @@ const HomePage: NextPage = () => {
           break;
         }
       }
-
+      console.log(match, number, array)
       if (match) {
         checkArray = [...checkArray, number];
       }
@@ -66,9 +67,9 @@ const HomePage: NextPage = () => {
             <path
               d="M9.33333 1.66664L1 9.99998L9.33333 18.3333"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </Link>
@@ -79,8 +80,23 @@ const HomePage: NextPage = () => {
         <h1 className="text-xl font-semibold">ค้นหาเลขเด็ด</h1>
         <p>งวดวันที่ 1 กรกฎาคม 2566</p>
         <LotteryInput onSubmit={handleSearch} />
-        <LotterySearchResults numbers={searchResults} />
+        <LotterySearchResults numbers={searchResults} lottoCart={lottoCart} setLottoCart={setLottoCart} />
       </div>
+      {
+        lottoCart.length != 0 ?
+          <div className="w-screen fixed bottom-0">
+            <div className="mx-auto h-full max-w-lg  rounded-t-xl flex justify-between items-center px-8 py-4 bg-white border-2 shadow-xl">
+              <div className='flex flex-col font-bold'>
+                <div>จำนวนสลากที่เลือก</div>
+                <div className='flex flex-row items-end gap-2'><div className=' text-xl'>{lottoCart.length}</div> ใบ</div>
+              </div>
+              <button className=' font-bold p-4 bg-green-500 rounded-md text-xl'>
+                ตรวจสอบฉลาก
+              </button>
+            </div>
+          </div>
+          : null
+      }
     </div>
   );
 };
