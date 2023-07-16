@@ -35,7 +35,7 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                 key={index}
                 onClick={() => addLottoToCart(number)}
                 className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
-                  lottoCart.includes(number) ? 'bg-green-100' : ''
+                  lottoCart.includes(number) ? 'bg-[#EDFFEA]' : ''
                 }`}
               >
                 <div className="w-2/3 space-y-2">
@@ -46,7 +46,7 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                   <p
                     className={`px-4 mb-1 bg-[#F5E4EF] rounded-lg underline underline-offset-2 ${
                       lottoCart.includes(number)
-                        ? 'bg-[#481238] text-white'
+                      ? 'bg-[#481237] text-white'
                         : ''
                     }`}
                   >
