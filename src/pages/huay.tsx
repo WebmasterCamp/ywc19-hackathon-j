@@ -12,9 +12,10 @@ const nonoSansThaiLooped = Noto_Sans_Thai_Looped({
 const HomePage: NextPage = () => {
   const [searchResults, setSearchResults] = useState<string[]>([]);
 
-  const numberArray = ['123456', '234567', '345678'];
+  const numberArray = ['123456', '234567', '345678','223456','425896'];
 
   const handleSearch = (array: string[]): null | void => {
+    var checkArray: string[] = []
     if (array.every((digit) => digit === '')) {
       return null;
     }
@@ -30,9 +31,11 @@ const HomePage: NextPage = () => {
       }
 
       if (match) {
-        setSearchResults([number]);
+        checkArray = [...checkArray,number]
       }
     });
+
+    setSearchResults(checkArray);
 
     // console.log('no match');
     return null;
