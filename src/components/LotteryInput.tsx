@@ -56,12 +56,12 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
           />
         ))}
       </div>
-      <p className="underline underline-offset-4 w-full text-right">
+      <p className="underline underline-offset-4 w-full text-right text-sm">
         ล้างทั้งหมด
       </p>
       <button
         type="submit"
-        className="p-4 font-medium text-white bg-primary-1 rounded hover:bg-primary-2 focus:outline-none focus:bg-primary-2 w-full base-animation"
+        className="py-2 font-medium text-white bg-primary-1 rounded hover:bg-primary-2 focus:outline-none focus:bg-primary-2 w-full base-animation"
       >
         ซื้อตัวเลข
       </button>

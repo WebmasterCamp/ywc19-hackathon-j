@@ -32,19 +32,11 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
                   lottoCart.includes(huay) ? 'bg-green-100' : ''
                 }`}
               >
-                <div className="w-1/2">
+                <div className="w-2/3">
                   <p>สลากกินแบ่งรัฐบาล</p>
                   <p className="font-bold text-3xl tracking-[.6em]">{huay}</p>
                 </div>
-                <div className="w-1/6 flex flex-col items-center justify-end text-sm">
-                  <p>งวดวันที่</p>
-                  <p className="">16</p>
-                </div>
-                <div className="w-1/6 flex flex-col items-center justify-end text-sm">
-                  <p>ชุดที่</p>
-                  <p className="">4</p>
-                </div>
-                <div className="w-1/6 flex justify-end items-end">
+                <div className="w-1/3 flex justify-end items-end">
                   <p className="text-green-600 font-bold text-4xl">80฿</p>
                 </div>
               </li>

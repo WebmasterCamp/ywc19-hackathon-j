@@ -46,9 +46,30 @@ const HomePage: NextPage = () => {
 
   return (
     <div
-      className={`container mx-auto p-10 flex flex-col h-screen items-center justify-start max-w-lg bg-gray-50/10 ${baiJamjuree.className}`}
+      className={`container mx-auto px-0 flex flex-col h-screen items-center justify-start max-w-lg bg-gray-50/10 ${baiJamjuree.className}`}
     >
-      <div className="flex flex-col gap-2 w-full h-full ">
+      <div className="flex items-center justify-between h-[20rem] w-full bg-primary-1 text-white p-6 mb-4">
+        <div>
+          <svg
+            width="11"
+            height="20"
+            viewBox="0 0 11 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.33333 1.66664L1 9.99998L9.33333 18.3333"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>สลากกินแบ่ง</div>
+        <div />
+      </div>
+      <div className="flex flex-col gap-2 w-full h-full px-6">
         <h1 className="text-xl font-semibold">ค้นหาเลขเด็ด</h1>
         <p>งวดวันที่ 1 กรกฎาคม 2566</p>
         <LotteryInput onSubmit={handleSearch} />
