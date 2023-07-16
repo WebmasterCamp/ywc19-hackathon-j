@@ -1,13 +1,20 @@
 import Image from "next/image"
 import { useState } from "react"
+import { Noto_Sans_Thai_Looped } from 'next/font/google';
+
+const nonoSansThaiLooped = Noto_Sans_Thai_Looped({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+});
 
 export default function Layout({ children, tab = 0 }: {
   children: React.ReactNode, tab:number
 }) {
-  const [nowTab, setNowTab] = useState(tab);
   // TODO: change setNowTab to navigate page
+  const [nowTab, setNowTab] = useState(tab);
+
   return (
-    <div>
+    <div className={`${nonoSansThaiLooped.className}`}>
       {children}
       <div className="w-screen fixed bottom-0 h-20">
         <div className="mx-auto h-full max-w-lg  rounded-t-3xl flex">
