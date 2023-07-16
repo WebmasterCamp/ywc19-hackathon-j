@@ -43,7 +43,13 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers, lottoCar
                   <p className="font-bold text-3xl tracking-[.6em]">{number}</p>
                 </div>
                 <div className="w-1/3 flex justify-end items-end flex-col">
-                  <p className="px-4 mb-1 bg-primary-2/20 rounded-lg underline underline-offset-2">
+                  <p
+                    className={`px-4 mb-1 bg-[#F5E4EF] rounded-lg underline underline-offset-2 ${
+                      lottoCart.includes(number)
+                        ? 'bg-[#481237] text-white'
+                        : ''
+                    }`}
+                  >
                     เลือกเลย
                   </p>
                   <p className="text-green-600 font-bold text-4xl">80฿</p>
