@@ -18,13 +18,14 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const HomePage: NextPage = () => {
-  const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [searchResults, setSearchResults] = useState<string[]>([...huays]);
 
   const numberArray = huays;
 
   const handleSearch = (array: string[]): null | void => {
+    var checkArray: string[] = []
     if (array.every((digit) => digit === '')) {
-      return null;
+      return setSearchResults(huays);
     }
     numberArray.forEach((number) => {
       let match = true;
@@ -38,9 +39,13 @@ const HomePage: NextPage = () => {
       }
 
       if (match) {
-        setSearchResults([number]);
+        checkArray = [...checkArray,number]
       }
     });
+
+    setSearchResults(checkArray);
+
+    // console.log('no match');
     return null;
   };
 
