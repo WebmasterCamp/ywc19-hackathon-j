@@ -12,7 +12,7 @@ const baiJamjuree = Bai_Jamjuree({
 export default function HomePage() {
   return (
     <Layout tab={0}>
-      <div className="flex flex-col pb-28">
+      <div className="flex flex-col pb-28 w-screen overflow-hidden">
         <div className="flex w-full items-center justify-center bg-primary-1 px-8 py-5">
           <Link className="h-full w-1/4 " href={'/home'}>
             <img src="/img/logo.png" className="h-full" alt="" />
@@ -51,51 +51,83 @@ export default function HomePage() {
             <div className="flex items-center justify-center w-full flex-col rounded-lg shadow-md border p-4 gap-4">
               <p>รางวัลที่ 1</p>
               <p>รางวัลละ 6,000,000</p>
-              <ul className="flex items-center gap-2">
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+              <ul className="flex items-center gap-2 px-2">
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  9
                 </li>
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  2
                 </li>
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  2
                 </li>
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  6
                 </li>
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  0
                 </li>
-                <li className="h-[44px] w-[44px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
-                  1
+                <li className="h-[40px] w-[40px] text-center rounded-md border flex items-center justify-center mb-2 text-xl">
+                  5
                 </li>
               </ul>
             </div>
             <div className="flex w-full items-center gap-4">
               <div className="flex items-center justify-center w-1/2 flex-col rounded-lg shadow-md border p-4 gap-4">
                 <p>เลขหน้า 3 ตัว</p>
-                <p>2 รางวัลๆ ละ 4,000 บาท</p>
-                <ul className="flex items-center gap-6">
-                  <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
-                    1
-                  </li>
-                  <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
-                    1
-                  </li>
-                </ul>
+                <p className="text-sm text-center">2 รางวัลๆ ละ 4,000 บาท</p>
+                <div className="flex items-center gap-6">
+                  <ul className="flex items-center gap-1 text-sm">
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      2
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      8
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      1
+                    </li>
+                  </ul>
+                  <ul className="flex items-center gap-1 text-sm">
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      8
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      6
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      7
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="flex items-center justify-center w-1/2 flex-col rounded-lg shadow-md border p-4 gap-4">
                 <p>เลขท้าย 3 ตัว</p>
-                <p>2 รางวัลๆ ละ 4,000 บาท</p>
-                <ul className="flex items-center gap-6">
-                  <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
-                    1
-                  </li>
-                  <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
-                    1
-                  </li>
-                </ul>
+                <p className="text-sm text-center">2 รางวัลๆ ละ 4,000 บาท</p>
+                <div className="flex items-center gap-6">
+                  <ul className="flex items-center gap-1 text-sm">
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      4
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      9
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      1
+                    </li>
+                  </ul>
+                  <ul className="flex items-center gap-1 text-sm">
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      9
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      4
+                    </li>
+                    <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
+                      7
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="flex items-center justify-center w-full flex-col rounded-lg shadow-md border p-4 gap-4">
@@ -106,7 +138,7 @@ export default function HomePage() {
                   1
                 </li>
                 <li className=" text-center rounded-md flex items-center justify-center mb-2 text-xl">
-                  1
+                  6
                 </li>
               </ul>
             </div>

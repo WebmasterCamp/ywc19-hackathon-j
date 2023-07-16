@@ -22,7 +22,7 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const index = Number(name.replace('digit-', '')) - 1;
-    const intValue = value.replace(/\D/g, '')
+    const intValue = value.replace(/\D/g, '');
     if (intValue.length == 0 && value.length != 0) return;
     setDigits((prevDigits) => {
       const newDigits = [...prevDigits];
@@ -32,8 +32,7 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
     if (intValue.toString().length === 1) {
       const nextInput = document.getElementById(`digit-${index + 2}`);
       nextInput?.focus();
-    } 
-    else if (intValue.toString().length === 0) {
+    } else if (intValue.toString().length === 0) {
       const prevInput = document.getElementById(`digit-${index}`);
       prevInput?.focus();
     }
@@ -74,8 +73,8 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
             value={digit}
             onChange={handleChange}
             maxLength={1}
-            pattern='[0-9]'
-            className="w-16 h-16 text-2xl bg-[#EEEEEE] text-center border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary-1 transition-all ease-in-out duration-200"
+            pattern="[0-9]"
+            className="w-12 h-12 text-2xl bg-[#EEEEEE] text-center border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary-1 transition-all ease-in-out duration-200"
           />
         ))}
       </div>

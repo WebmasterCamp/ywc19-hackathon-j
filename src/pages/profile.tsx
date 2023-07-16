@@ -10,7 +10,7 @@ const Profile: NextPage = () => {
   return (
     <div className={`h-screen w-screen overflow-hidden`}>
       <Link href={'https://forms.gle/RfNDNN6stKVShMkLA'} target="_blank">
-        <img src="/img/profile.png" className="w-full h-full" alt="" />
+        <img src="/img/prof.png" className="w-full h-full" alt="" />
       </Link>
     </div>
   );

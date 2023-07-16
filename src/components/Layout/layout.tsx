@@ -43,25 +43,7 @@ export default function Layout({
             />
             <p>หน้าแรก</p>
           </button>
-          <button
-            className={`w-1/4 h-full flex flex-col justify-center items-center ${
-              nowTab == 1 ? `bg-[#F5E4EF]` : null
-            }`}
-            onClick={(e) => {
-              setNowTab(1);
-              router.push('/book');
-            }}
-          >
-            <Image
-              src="/insurance.svg"
-              alt="insurance Logo"
-              className="dark:invert"
-              width={24}
-              height={24}
-              priority
-            />
-            <p>ประกัน</p>
-          </button>
+
           <button
             className={`w-1/4 h-full flex flex-col justify-center items-center ${
               nowTab == 2 ? `bg-[#F5E4EF]` : null
@@ -80,6 +62,25 @@ export default function Layout({
               priority
             />
             <p>ฉลากของฉัน</p>
+          </button>
+          <button
+            className={`w-1/4 h-full flex flex-col justify-center items-center ${
+              nowTab == 1 ? `bg-[#F5E4EF]` : null
+            }`}
+            onClick={(e) => {
+              setNowTab(1);
+              router.push('/book');
+            }}
+          >
+            <Image
+              src="/insurance.svg"
+              alt="insurance Logo"
+              className="dark:invert"
+              width={24}
+              height={24}
+              priority
+            />
+            <p>ประกัน</p>
           </button>
           <button
             className={`w-1/4 h-full rounded-tr-3xl flex flex-col justify-center items-center ${
