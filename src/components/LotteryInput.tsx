@@ -67,10 +67,11 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
             type="text"
             name={`digit-${index + 1}`}
             id={`digit-${index + 1}`}
+            placeholder="-"
             value={digit}
             onChange={handleChange}
             maxLength={1}
-            className="w-16 h-16 text-2xl border text-center border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary-1 transition-all ease-in-out duration-200"
+            className="w-16 h-16 text-2xl bg-[#EEEEEE] text-center border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary-1 transition-all ease-in-out duration-200"
           />
         ))}
       </div>

@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 import { useState } from 'react';
 import { Noto_Sans_Thai_Looped, Bai_Jamjuree } from 'next/font/google';
 import huays from '@/data/huays';
+import Link from 'next/link';
 
 const nonoSansThaiLooped = Noto_Sans_Thai_Looped({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -54,7 +55,7 @@ const HomePage: NextPage = () => {
       className={`container mx-auto px-0 flex flex-col min-h-screen items-center justify-start max-w-lg bg-gray-50/10 ${baiJamjuree.className}`}
     >
       <div className="flex items-center justify-between h-18 w-full bg-primary-1 text-white p-6 mb-4">
-        <div>
+        <Link href={'/'}>
           <svg
             width="11"
             height="20"
@@ -70,7 +71,7 @@ const HomePage: NextPage = () => {
               stroke-linejoin="round"
             />
           </svg>
-        </div>
+        </Link>
         <p className="text-lg">สลากกินแบ่ง</p>
         <div />
       </div>

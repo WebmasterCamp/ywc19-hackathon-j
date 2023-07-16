@@ -27,15 +27,22 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
               <li
                 key={index}
                 onClick={() => addLottoToCart(huay)}
-                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
-                  lottoCart.includes(huay) ? 'bg-green-100' : ''
+                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white shadow-md border flex gap-0 ${
+                  lottoCart.includes(huay) ? 'bg-[#F5E4EF] ' : ''
                 }`}
               >
                 <div className="w-2/3 space-y-2">
                   <p>สลากกินแบ่งรัฐบาล</p>
                   <p className="font-bold text-3xl tracking-[.6em]">{huay}</p>
                 </div>
-                <div className="w-1/3 flex justify-end items-end">
+                <div className="w-1/3 flex justify-end items-end flex-col">
+                  <p
+                    className={`px-4 mb-1 bg-[#F5E4EF] rounded-lg underline underline-offset-2 ${
+                      lottoCart.includes(huay) ? 'bg-[#481237] text-white' : ''
+                    }`}
+                  >
+                    เลือกเลย
+                  </p>
                   <p className="text-green-600 font-bold text-4xl">80฿</p>
                 </div>
               </li>
@@ -47,8 +54,8 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
               <li
                 key={index}
                 onClick={() => addLottoToCart(number)}
-                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white border shadow flex gap-0 ${
-                  lottoCart.includes(number) ? 'bg-green-100' : ''
+                className={`transition-all ease-in-out duration-200 w-full rounded px-3 py-4 bg-white shadow-md border flex gap-0 ${
+                  lottoCart.includes(number) ? 'bg-[#F5E4EF]' : ''
                 }`}
               >
                 <div className="w-2/3 space-y-2">
@@ -56,7 +63,13 @@ const LotterySearchResults: FC<LotterySearchResultsProps> = ({ numbers }) => {
                   <p className="font-bold text-3xl tracking-[.6em]">{number}</p>
                 </div>
                 <div className="w-1/3 flex justify-end items-end flex-col">
-                  <p className="px-4 mb-1 bg-primary-2/20 rounded-lg underline underline-offset-2">
+                  <p
+                    className={`px-4 mb-1 bg-[#F5E4EF] rounded-lg underline underline-offset-2 ${
+                      lottoCart.includes(number)
+                        ? 'bg-[#481237] text-white'
+                        : ''
+                    }`}
+                  >
                     เลือกเลย
                   </p>
                   <p className="text-green-600 font-bold text-4xl">80฿</p>
