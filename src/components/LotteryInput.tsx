@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma';
 import React, { useEffect, useState } from 'react';
 
 interface LotteryInputProps {
@@ -7,7 +8,6 @@ interface LotteryInputProps {
 const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
   const [digits, setDigits] = useState<string[]>(Array(6).fill(''));
 
-  // TODO: handle input validation
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const index = Number(name.replace('digit-', '')) - 1;
@@ -61,7 +61,7 @@ const LotteryInput: React.FC<LotteryInputProps> = ({ onSubmit }) => {
       </p>
       <button
         type="submit"
-        className="p-4 font-medium text-white bg-purple-500 rounded hover:bg-purple-600 focus:outline-none focus:bg-purple-600 w-full"
+        className="p-4 font-medium text-white bg-primary-1 rounded hover:bg-primary-2 focus:outline-none focus:bg-primary-2 w-full base-animation"
       >
         ซื้อตัวเลข
       </button>
