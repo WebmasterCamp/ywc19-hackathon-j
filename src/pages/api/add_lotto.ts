@@ -1,10 +1,10 @@
 import { PrismaClient } from '@prisma/client';
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  code: string
-  endAt: Date
-}
+  code: string;
+  endAt: Date;
+};
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,15 +12,8 @@ export default async function handler(
 ) {
   const prisma = new PrismaClient();
   try {
-    const newLotto = await prisma.lotto.create({
-      data: {
-        code: '111222',
-        endAt: new Date,
-      }
-    })
-    res.send(newLotto);
+    res.status(200);
   } catch (error) {
     res.status(500);
   }
 }
-

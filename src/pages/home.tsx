@@ -1,6 +1,5 @@
 import Layout from '@/components/Layout/layout';
 import { Bai_Jamjuree, Inter } from 'next/font/google';
-import Link from 'next/link';
 
 const baiJamjuree = Bai_Jamjuree({
   weight: ['400', '700'],
@@ -9,26 +8,20 @@ const baiJamjuree = Bai_Jamjuree({
   display: 'swap',
 });
 
-export default function Home() {
+export default function HomePage() {
   return (
     <Layout tab={0}>
       <div className="flex flex-col pb-28">
-        <div className="flex w-full items-center justify-between bg-primary-1 px-8 py-5">
+        <div className="flex w-full items-center justify-center bg-primary-1 px-8 py-5">
           <img src="/img/logo.png" className="w-1/4 h-full" alt="" />
-          <div className="flex items-center justify-center gap-2">
-            <Link
-              href={'/home'}
-              className="rounded-full px-4 py-1 border border-primary-1 text-[#333333	] bg-white"
-            >
+          {/* <div className="flex items-center justify-center gap-2">
+            <div className="rounded-full px-4 py-1 border border-primary-1 text-[#333333	] bg-white">
               เข้าสู่ระบบ
-            </Link>
-            <Link
-              href={'/home'}
-              className="rounded-full px-4 py-1 bg-[#F8C308] text-[#333333]"
-            >
+            </div>
+            <div className="rounded-full px-4 py-1 bg-[#F8C308] text-[#333333]">
               สมัครสมาชิก
-            </Link>
-          </div>
+            </div>
+          </div> */}
         </div>
         <div className="px-8 py-4 gap-6 flex flex-col">
           <div className="mt-4 rounded-lg relative flex flex-col justify-between p-6 h-[10rem] bg-gradient-to-b from-[#rounded-full1 bg-[#F8C308] from-[#481237] to-[#953D79]">

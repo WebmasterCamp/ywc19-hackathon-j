@@ -12,17 +12,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    const lotto = await prisma.lotto.findFirst({
-      where: {
-        endAt: {
-          gt: new Date(),
-        },
-      },
-      orderBy: {
-        endAt: 'asc',
-      },
-    });
-    res.status(200).json(lotto);
+    res.status(200);
   } catch (error) {
     res.status(500);
   }
